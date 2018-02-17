@@ -5,7 +5,7 @@ def Main():
     # range. 
     host = '192.168.1.236'
     # initial port = 1023
-    port = 50001
+    port = 8000
 
     server_addr = '10.0.2.15'
 
