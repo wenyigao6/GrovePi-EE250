@@ -5,9 +5,9 @@ def Main():
     # range. 
     host = '192.168.1.236'
     # initial port = 1023
-    port = 8000
+    port = 1024
 
-    server_addr = '10.0.2.15'
+    server_addr = '192.168.1.131'
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
     s.bind((host,port))
