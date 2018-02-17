@@ -5,8 +5,8 @@ def Main():
     # range. 
     host = '192.168.1.236'
     # initial port = 1023
-    port = 1024
-
+    port = 9000
+    # mac's address
     server_addr = '192.168.1.131'
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
