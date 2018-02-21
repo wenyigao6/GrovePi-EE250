@@ -19,6 +19,7 @@ def Main():
     while message != 'q':
         print("connecting")
         #tuples are immutable so we need to overwrite the last tuple
+        printy(server_addr, dst_port)
         server = (server_addr, int(dst_port))
 
         # for UDP, sendto() and recvfrom() are used instead
