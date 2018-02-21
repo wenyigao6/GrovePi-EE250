@@ -47,11 +47,13 @@ def Main():
         if not data:
        	    break
 
-       	if str(data) == "LED_ON":
-       	    digitalWrite(led,1)
+        try:
 
-       	if str(data) == "LED_OFF":
-       	    digitalWrite(led,0)
+           	if str(data) == "LED_ON":
+           	    digitalWrite(led,1)
+
+           	if str(data) == "LED_OFF":
+           	    digitalWrite(led,0)
 
        	except KeyboardInterrupt:	# Turn LED off before stopping
         digitalWrite(led,0)
