@@ -55,7 +55,7 @@ def Main():
         message = input("message-> ")
         try:
         # Read distance value from Ultrasonic
-        message = grovepi.ultrasonicRead(ultrasonic_ranger)
+        	message = grovepi.ultrasonicRead(ultrasonic_ranger)
 
     except TypeError:
         print ("Error")
