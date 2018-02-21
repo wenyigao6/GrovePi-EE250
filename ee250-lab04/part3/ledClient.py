@@ -37,7 +37,7 @@ def Main():
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #by default, the socket constructor creates an TCP/IPv4 socket
     s.bind((host,port))
-	s.listen(1)
+	  s.listen(1)
     c, addr = s.accept()
     while True:
        	data = c.recv(1024).decode('utf-8')
