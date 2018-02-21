@@ -31,7 +31,7 @@ def Main():
     # UDP is connectionless, so a client does not formally connect to a server
     # before sending a message.
     dst_port = input("destination port-> ")
-        try:
+    try:
         # Read distance value from Ultrasonic
         message = grovepi.ultrasonicRead(ultrasonic_ranger)
 
