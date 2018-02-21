@@ -26,6 +26,8 @@ print ("Connect the LED to the port labele D4!" )
 import socket
 
 def Main():
+
+
     """127.0.0.1 is the loopback address. Any packets sent to this address will
     essentially loop right back to your machine and look for any process 
     listening in on the port specified."""
@@ -40,22 +42,22 @@ def Main():
     s.listen(1)
     c, addr = s.accept()
     while True:
-       	data = c.recv(1024).decode('utf-8')
+        data = c.recv(1024).decode('utf-8')
        	
-       	if not data:
-       		break
+        if not data:
+       	    break
 
-       	if data == 'LED_ON'
-       		digitalWrite(led,1)
+       	if str(data) == "LED_ON"
+       	    digitalWrite(led,1)
 
-       	if data == 'LED_OFF'
-       		digitalWrite(led,0)
+       	if str(data) == "LED_OFF"
+       	    digitalWrite(led,0)
 
        	except KeyboardInterrupt:	# Turn LED off before stopping
         digitalWrite(led,0)
         break
-	    except IOError:				# Print "Error" if communication error encountered
-	        print ("Error")
+        except IOError:				# Print "Error" if communication error encountered
+            print ("Error")
 
         #1024 is the receive buffer size. It's enough for us, and it's a nice number. 
 
