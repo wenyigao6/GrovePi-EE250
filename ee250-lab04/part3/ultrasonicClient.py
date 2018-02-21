@@ -21,9 +21,9 @@ def Main():
     # Change the host and port as needed. For ports, use a number in the 9000 
     # range. 
     host = '192.168.1.236'
-    port = 5001
-
-    server_addr = '10.0.2.15'
+    port = 6003
+    # mac's address
+    server_addr = '192.168.1.131'
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) 
     s.bind((host,port))
