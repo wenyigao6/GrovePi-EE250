@@ -56,8 +56,8 @@ def Main():
            	    digitalWrite(led,0)
 
        	except KeyboardInterrupt:	# Turn LED off before stopping
-        digitalWrite(led,0)
-        break
+            digitalWrite(led,0)
+            break
         except IOError:				# Print "Error" if communication error encountered
             print ("Error")
 
