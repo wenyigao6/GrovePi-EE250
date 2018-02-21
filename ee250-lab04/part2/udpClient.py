@@ -5,7 +5,7 @@ def Main():
     # range. 
     host = '192.168.1.236'
     # initial port = 1023
-    port = 9003
+    port = 6003
     # mac's address
     server_addr = '192.168.1.131'
 
@@ -17,11 +17,13 @@ def Main():
     dst_port = input("destination port-> ")
     message = input("message-> ")
     while message != 'q':
+        print("connecting")
         #tuples are immutable so we need to overwrite the last tuple
         server = (server_addr, int(dst_port))
 
         # for UDP, sendto() and recvfrom() are used instead
         s.sendto(message.encode('utf-8'), server) 
+        print("sent! ")
         data, addr = s.recvfrom(1024)
         data = data.decode('utf-8')
         print("Received from server: " + data)
