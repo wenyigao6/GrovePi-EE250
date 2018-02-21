@@ -5,7 +5,7 @@ def Main():
     # range. 
     host = '192.168.1.236'
     # initial port = 1023
-    port = 9000
+    port = 9003
     # mac's address
     server_addr = '192.168.1.131'
 
