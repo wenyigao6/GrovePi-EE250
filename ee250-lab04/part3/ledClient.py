@@ -31,10 +31,10 @@ def Main():
     """127.0.0.1 is the loopback address. Any packets sent to this address will
     essentially loop right back to your machine and look for any process 
     listening in on the port specified."""
-    host = '127.0.0.1'
-    port = 5001
+    host = '192.168.1.236'
+    port = 5000
 
-    server = ('127.0.0.1', 5000)
+    # server = ('192.168.1.131', 5000)
 
 
     # s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #by default, the socket constructor creates an TCP/IPv4 socket

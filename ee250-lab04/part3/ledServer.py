@@ -18,7 +18,7 @@ sys.path.append('../../Software/Python/')
 import socket
 
 def Main():
-    host = '127.0.0.1'
+    host = '10.0.2.15'
     port = 5000
 
     s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
