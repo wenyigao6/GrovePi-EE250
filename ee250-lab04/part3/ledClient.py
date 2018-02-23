@@ -34,14 +34,14 @@ def Main():
     host = '10.0.2.15'
     port = 5000
 
-    # server = ('192.168.1.131', 5000)
+    server = ('192.168.1.131', 8001)
 
 
     # s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #by default, the socket constructor creates an TCP/IPv4 socket
     # s.bind((host,port))
     # s.listen(1)
     s = socket.socket() #by default, the socket constructor creates an TCP/IPv4 socket
-    s.connect((host,port))
+    s.connect(server)
     # c, addr = s.accept()
     while True:
         data = s.recv(1024).decode('utf-8')
