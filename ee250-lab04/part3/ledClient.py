@@ -45,6 +45,7 @@ def Main():
     # c, addr = s.accept()
     while True:
         data = s.recv(1024).decode('utf-8')
+        print(data)
        	
         if not data:
        	    break
