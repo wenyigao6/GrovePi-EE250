@@ -37,12 +37,14 @@ def Main():
     server = ('127.0.0.1', 5000)
 
 
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #by default, the socket constructor creates an TCP/IPv4 socket
-    s.bind((host,port))
-    s.listen(1)
-    c, addr = s.accept()
+    # s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM) #by default, the socket constructor creates an TCP/IPv4 socket
+    # s.bind((host,port))
+    # s.listen(1)
+    s = socket.socket() #by default, the socket constructor creates an TCP/IPv4 socket
+    s.connect((host,port))
+    # c, addr = s.accept()
     while True:
-        data = c.recv(1024).decode('utf-8')
+        data = s.recv(1024).decode('utf-8')
        	
         if not data:
        	    break
