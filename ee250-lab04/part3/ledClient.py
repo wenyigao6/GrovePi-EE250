@@ -47,8 +47,8 @@ def Main():
         data = s.recv(1024).decode('utf-8')
         print(data)
        	
-        if not data:
-       	    break
+        # if not data:
+       	#     break
 
         try:
 
