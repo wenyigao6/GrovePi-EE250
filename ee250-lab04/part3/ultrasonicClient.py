@@ -53,14 +53,15 @@ def Main():
         print("Received from server: " + data)
         dst_port = input("destination port-> ")
         message = input("message-> ")
+
         try:
         # Read distance value from Ultrasonic
         	message = grovepi.ultrasonicRead(ultrasonic_ranger)
 
-    except TypeError:
-        print ("Error")
-    except IOError:
-        print ("Error")
+        except TypeError:
+            print ("Error")
+        except IOError:
+            print ("Error")
 
     s.close()
 
