@@ -10,7 +10,7 @@ sys.path.append('../../Software/Python/')
 
 # import grovepi
 
-from grovepi import *
+# from grovepi import *
 # import grovepi
 
 # use TCP
