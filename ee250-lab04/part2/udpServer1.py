@@ -17,6 +17,7 @@ def Process1():
 
     print("Process 1 Server Started")
     while True:
+        print("waiting for message...")
         data, addr = s.recvfrom(1024)
         data = data.decode('utf-8')
         print("Message From: " + str(addr))
