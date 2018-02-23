@@ -18,18 +18,18 @@ sys.path.append('../../Software/Python/')
 import socket
 
 def Main():
-    host = '10.0.2.15'
+    host = '192.168.1.236'
     port = 5000
-    addr = ('192.168.1.236', 5000)
+    # addr = ('192.168.1.236', 5000)
 
-    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s = socket.socket()
     s.bind((host,port))
 
     print("Server Started")
     while True:
     	data = input("LED_ON or LED_OFF: ")
-    	s.sendto(data.encode('utf-8'),addr)
-    	# s.send(data.encode('utf-8'))
+    	# s.sendto(data.encode('utf-8'),addr)
+    	s.send(data.encode('utf-8'))
     c.close()
 
 if __name__ == '__main__':
