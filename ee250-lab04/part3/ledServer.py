@@ -26,7 +26,7 @@ def Main():
 
     print("Server Started")
     while True:
-    	data = input("LED_ON or LED_OFF")
+    	data = input("LED_ON or LED_OFF: ")
     	s.sendto(data.encode('utf-8'),addr)
     c.close()
 
