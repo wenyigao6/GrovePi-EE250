@@ -18,7 +18,7 @@ sys.path.append('../../Software/Python/')
 import socket
 
 def Main():
-    host = '10.0.2.15'
+    host = '192.168.1.236'
     port = 5000
     # addr = ('192.168.1.236', 5000)
 

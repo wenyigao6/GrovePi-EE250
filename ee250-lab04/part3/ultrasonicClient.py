@@ -39,7 +39,7 @@ def Main():
         print ("Error")
     except IOError:
         print ("Error")
-    print("Distance:" + message)
+    print("Distance:" + str(message) )
 
     while message != 'q':
 
