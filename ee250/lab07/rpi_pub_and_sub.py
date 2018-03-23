@@ -40,6 +40,7 @@ def lcd_callback(client, userdata, message):
     #     str(message.payload, "utf-8") + "\"")
     # print("custom_callback: message.payload is of type " + 
     #       str(type(message.payload)))
+    setRGB(0,128,64)
     setText(str(message.payload, "utf-8") )
 
 
