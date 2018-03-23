@@ -40,7 +40,6 @@ def lcd_callback(client, userdata, message):
     #     str(message.payload, "utf-8") + "\"")
     # print("custom_callback: message.payload is of type " + 
     #       str(type(message.payload)))
-    setRGB(0,128,64)
     setText(str(message.payload, "utf-8") )
 
 
@@ -61,6 +60,8 @@ def on_message(client, userdata, msg):
 if __name__ == '__main__':
     #this section is covered in publisher_and_subscriber_example.py
     client = mqtt.Client()
+    setRGB(0,128,64)
+
     client.on_message = on_message
     client.on_connect = on_connect
     client.connect(host="eclipse.usc.edu", port=11000, keepalive=60)
