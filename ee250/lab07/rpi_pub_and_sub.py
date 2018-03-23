@@ -6,6 +6,7 @@ import paho.mqtt.client as mqtt
 import time
 
 from grovepi import *
+from grove_rgb_lcd import *
 
 global led
 global button
@@ -33,12 +34,24 @@ def led_callback(client, userdata, message):
         # do sth
         digitalWrite(led, 0)
 
+def lcd_callback(client, userdata, message):
+    #the third argument is 'message' here unlike 'msg' in on_message 
+    # print("custom_callback: " + message.topic + " " + "\"" + 
+    #     str(message.payload, "utf-8") + "\"")
+    # print("custom_callback: message.payload is of type " + 
+    #       str(type(message.payload)))
+    setText(str(message.payload, "utf-8") )
+
+
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
 
     #subscribe to topics of interest here
     client.subscribe("anrg-pi8/led")
     client.message_callback_add("anrg-pi8/led", led_callback)
+
+    client.subscribe("anrg-pi8/lcd")
+    client.message_callback_add("anrg-pi8/lcd", lcd_callback)
 
 #Default message callback. Please use custom callbacks.
 def on_message(client, userdata, msg):
