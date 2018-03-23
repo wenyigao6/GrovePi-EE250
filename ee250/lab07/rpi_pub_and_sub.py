@@ -9,8 +9,10 @@ from grovepi import *
 
 global led
 global button
+global ultrasonic_ranger
 led = 4
 button = 3
+ultrasonic_ranger = 2
 
 pinMode(led, "OUTPUT")
 pinMode(button, "INPUT")
@@ -56,8 +58,10 @@ if __name__ == '__main__':
         # print("delete this line")
         time.sleep(1)
 
+        client.publish("anrg-pi8/ultrasonicRanger", ultrasonicRead(ultrasonic_ranger))
+
         if digitalRead(button):
-            client.publish("anrg-pi8/button", "button is pressed!")
+            client.publish("anrg-pi8/button", "Button pressed!")
 
         # if message == "LED_ON":
         #     # turn led on
