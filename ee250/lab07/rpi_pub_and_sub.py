@@ -8,9 +8,12 @@ import time
 from grovepi import *
 
 global led
+global button
 led = 4
+button = 3
 
 pinMode(led, "OUTPUT")
+pinMode(button, "INPUT")
 
 
 def led_callback(client, userdata, message):
@@ -53,6 +56,8 @@ if __name__ == '__main__':
         # print("delete this line")
         time.sleep(1)
 
+        if digitalRead(button):
+            client.publish("anrg-pi8/button", "button is pressed!")
 
         # if message == "LED_ON":
         #     # turn led on

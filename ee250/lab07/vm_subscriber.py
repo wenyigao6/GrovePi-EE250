@@ -11,6 +11,10 @@ def ultrasonicRanger_callback(client, userdata, message):
         str(message.payload, "utf-8") + "\"")
     print("custom_callback: message.payload is of type " + 
           str(type(message.payload)))
+
+def button_callback(client, userdata, message):
+    #the third argument is 'message' here unlike 'msg' in on_message 
+    print(str(message.payload, "utf-8"))
     
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
@@ -22,6 +26,9 @@ def on_connect(client, userdata, flags, rc):
 
     client.subscribe("anrg-pi8/ultrasonicRanger")
     client.message_callback_add("anrg-pi8/ultrasonicRanger", ultrasonicRanger_callback)
+
+    client.subscribe("anrg-pi8/button")
+    client.message_callback_add("anrg-pi8/button", button_callback)
 
 #Default message callback. Please use custom callbacks.
 def on_message(client, userdata, msg):
