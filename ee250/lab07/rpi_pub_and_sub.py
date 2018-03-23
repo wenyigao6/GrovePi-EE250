@@ -20,11 +20,11 @@ def led_callback(client, userdata, message):
     # print("custom_callback: message.payload is of type " + 
     #       str(type(message.payload)))
 
-    if str(message.payload, "utf-8") == str("LED_ON", "utf-8"):
+    if str(message.payload, "utf-8") == "LED_ON":
         # do sth
         digitalWrite(led, 1)
 
-    elif str(message.payload, "utf-8") == str("LED_OFF", "utf-8"):
+    elif str(message.payload, "utf-8") == "LED_OFF":
         # do sth
         digitalWrite(led, 0)
 
