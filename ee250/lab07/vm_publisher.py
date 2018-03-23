@@ -6,10 +6,19 @@ import paho.mqtt.client as mqtt
 import time
 from pynput import keyboard
 
+def led_callback(client, userdata, message):
+    #the third argument is 'message' here unlike 'msg' in on_message 
+    print("custom_callback: " + message.topic + " " + "\"" + 
+        str(message.payload, "utf-8") + "\"")
+    print("custom_callback: message.payload is of type " + 
+          str(type(message.payload)))
+
 def on_connect(client, userdata, flags, rc):
     print("Connected to server (i.e., broker) with result code "+str(rc))
 
     #subscribe to topics of interest here
+    client.subscribe("anrg-pi8/led")
+    client.message_callback_add("anrg-pi8/led", led_callback)
 
 #Default message callback. Please use custom callbacks.
 def on_message(client, userdata, msg):
@@ -28,6 +37,7 @@ def on_press(key):
         print("a")
         # send "a" character to rpi
         #send "LED_ON"
+        client.publish("anrg-pi8/led", "LED_ON")
     elif k == 's':
         print("s")
         # send "s" character to rpi
@@ -35,6 +45,7 @@ def on_press(key):
         print("d")
         # send "d" character to rpi
         # send "LED_OFF"
+        client.publish("anrg-pi8/led", "LED_OFF")
 
 if __name__ == '__main__':
     #setup the keyboard event listener
@@ -49,7 +60,8 @@ if __name__ == '__main__':
     client.loop_start()
 
     while True:
-        print("delete this line")
+        # print("delete this line")
         time.sleep(1)
+
             
 
